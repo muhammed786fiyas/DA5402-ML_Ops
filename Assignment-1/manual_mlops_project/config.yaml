@@ -1,0 +1,51 @@
+# -----------------------------
+# Project Metadata
+# -----------------------------
+project_name: "Predictive_Maintenance_A1"
+author: "Muhammed Fiyas"
+
+# -----------------------------
+# Data Configuration
+# -----------------------------
+data:
+  raw_path: "data/raw/ai4i2020.csv"
+  processed_dir: "data/processed/"
+  production_dir: "data/production/"
+  manifest_path: "data/manifest.txt"
+
+  train_size: 7000
+  drop_columns:
+    - "UDI"
+    - "Product ID"
+    - "TWF"
+    - "HDF"
+    - "PWF"
+    - "OSF"
+    - "RNF"
+
+  current_version: "v6"
+  
+
+# -----------------------------
+# Model Parameters
+# -----------------------------
+model_params:
+  algorithm: "RandomForest"
+  n_estimators: 100
+  max_depth: 10
+  random_state: 42
+
+# -----------------------------
+# Deployment Configuration
+# -----------------------------
+deployment:
+  model_path_template: "models/model_{version}.pkl"
+  port: 8000
+  threshold: 0.5
+
+# -----------------------------
+# Monitoring Configuration
+# -----------------------------
+monitoring:
+  minimum_required_logs: 500
+  drift_threshold: 0.05
