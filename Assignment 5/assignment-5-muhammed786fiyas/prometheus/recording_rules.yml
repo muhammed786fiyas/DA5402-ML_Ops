@@ -1,0 +1,22 @@
+groups:
+  - name: recording_rules
+    rules:
+      # AI-generated PromQL | Prompt: "Write PromQL to calculate CPU usage percentage from node_exporter idle mode"
+      - record: instance:cpu_usage_percent:avg2m
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100)
+
+      # AI-generated PromQL | Prompt: "Write PromQL to calculate memory usage percentage from node_exporter"
+      - record: instance:memory_usage_percent
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100
+
+      # AI-generated PromQL | Prompt: "Write PromQL to compute P95 latency from histogram_quantile over 5 minute window"
+      - record: job:inference_latency_p95:5m
+        expr: histogram_quantile(0.95, rate(inference_latency_seconds_bucket[5m]))
+
+      # AI-generated PromQL | Prompt: "Write PromQL to compute P50 median latency from histogram_quantile"
+      - record: job:inference_latency_p50:5m
+        expr: histogram_quantile(0.50, rate(inference_latency_seconds_bucket[5m]))
+
+
+      - record: job:images_processed_rate:5m
+        expr: rate(images_processed_total[5m])

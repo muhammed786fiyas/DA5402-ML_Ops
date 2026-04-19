@@ -1,0 +1,5 @@
+2026-03-22 14:30:08 | INFO     | image_captioning | Prometheus metrics server started on :8001/metrics
+2026-03-22 14:30:08 | INFO     | image_captioning | Loading BLIP model from HuggingFace...
+2026-03-22 14:30:11 | INFO     | image_captioning | BLIP model loaded successfully
+2026-03-22 14:30:21 | WARNING  | image_captioning | Metrics server already running on :8001
+2026-03-22 14:30:26 | WARNING  | image_captioning | Metrics server already running on :8001

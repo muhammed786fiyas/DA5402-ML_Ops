@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# Conda
+.conda/
+
+# MLflow - keep folder but ignore run data
+mlruns/
+!mlruns/.gitkeep
+src/mlruns/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Dataset (MNIST auto-downloads here)
+data/MNIST/
+data/test/
+data/*.zip
+data/*.tar.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Logs
+*.log
+*.out
+
+# Model files (large)
+*.pth
+*.pt
+*.ckpt
+
+#logs
+logs/
+*.log
+
+#teast data
+sample_digit.png
+
+# report images
+report/images/
+

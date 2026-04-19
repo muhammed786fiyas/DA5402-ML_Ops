@@ -1,0 +1,53 @@
+2026-03-22 16:53:08 | INFO     | image_captioning | Prometheus metrics server started on :8001/metrics
+2026-03-22 16:53:08 | INFO     | image_captioning | Loading BLIP model from HuggingFace...
+2026-03-22 16:53:10 | INFO     | image_captioning | BLIP model loaded successfully
+2026-03-22 16:53:27 | WARNING  | image_captioning | Metrics server already running on :8001
+2026-03-22 16:53:46 | INFO     | image_captioning | Bulk upload started | total=9 images | session=862191f8
+2026-03-22 16:53:46 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:48 | INFO     | image_captioning | Caption generated | mode=bulk | latency=2.13s | caption='a gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi'
+2026-03-22 16:53:48 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:49 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.60s | caption='an elephant standing in the grass'
+2026-03-22 16:53:49 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:49 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.68s | caption='a lion walking across a dirt field'
+2026-03-22 16:53:49 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:50 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.55s | caption='a group of deers'
+2026-03-22 16:53:50 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:51 | INFO     | image_captioning | Caption generated | mode=bulk | latency=1.37s | caption='a bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob'
+2026-03-22 16:53:51 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:52 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.71s | caption='a rhino and a rhino in a field'
+2026-03-22 16:53:52 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:53 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.70s | caption='a zebra standing in a field of grass'
+2026-03-22 16:53:53 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:53 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.46s | caption='a green field'
+2026-03-22 16:53:53 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:53:54 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.60s | caption='a parrot sitting on a branch'
+2026-03-22 16:53:54 | INFO     | image_captioning | Bulk upload complete | success=9/9 | session=862191f8
+2026-03-22 16:53:59 | INFO     | image_captioning | Single image upload | size=6.4KB | session=862191f8
+2026-03-22 16:53:59 | INFO     | image_captioning | Generating caption | mode=single
+2026-03-22 16:53:59 | INFO     | image_captioning | Caption generated | mode=single | latency=0.58s | caption='a green field'
+2026-03-22 16:54:01 | INFO     | image_captioning | Single image upload | size=7.5KB | session=862191f8
+2026-03-22 16:54:01 | INFO     | image_captioning | Generating caption | mode=single
+2026-03-22 16:54:02 | INFO     | image_captioning | Caption generated | mode=single | latency=0.82s | caption='a lion walking across a dirt field'
+2026-03-22 16:57:55 | INFO     | image_captioning | Single image upload | size=11.4KB | session=862191f8
+2026-03-22 16:57:55 | INFO     | image_captioning | Generating caption | mode=single
+2026-03-22 16:57:56 | INFO     | image_captioning | Caption generated | mode=single | latency=1.19s | caption='a zebra standing in a field of grass'
+2026-03-22 16:58:06 | INFO     | image_captioning | Bulk upload started | total=9 images | session=862191f8
+2026-03-22 16:58:06 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:09 | INFO     | image_captioning | Caption generated | mode=bulk | latency=2.39s | caption='a gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi gi'
+2026-03-22 16:58:09 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:10 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.75s | caption='an elephant standing in the grass'
+2026-03-22 16:58:10 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:10 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.80s | caption='a lion walking across a dirt field'
+2026-03-22 16:58:10 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:11 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.71s | caption='a group of deers'
+2026-03-22 16:58:11 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:13 | INFO     | image_captioning | Caption generated | mode=bulk | latency=1.59s | caption='a bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob bob'
+2026-03-22 16:58:13 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:14 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.86s | caption='a rhino and a rhino in a field'
+2026-03-22 16:58:14 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:14 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.88s | caption='a zebra standing in a field of grass'
+2026-03-22 16:58:14 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:15 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.59s | caption='a green field'
+2026-03-22 16:58:15 | INFO     | image_captioning | Generating caption | mode=bulk
+2026-03-22 16:58:16 | INFO     | image_captioning | Caption generated | mode=bulk | latency=0.80s | caption='a parrot sitting on a branch'
+2026-03-22 16:58:16 | INFO     | image_captioning | Bulk upload complete | success=9/9 | session=862191f8

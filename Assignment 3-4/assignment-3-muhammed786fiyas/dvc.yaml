@@ -1,0 +1,160 @@
+# dvc.yaml
+# DVC Pipeline Definition for Cattle Muzzle Biometrics
+# Run with: dvc repro
+# Each stage only reruns if its deps or params change
+
+stages:
+
+  # ─────────────────────────────────────────────────────
+  # Stage 1: Prepare
+  # Resizes images and splits into train/val/test
+  # ─────────────────────────────────────────────────────
+  prepare:
+    cmd: python -m src.prepare
+    deps:
+      - src/prepare.py
+      - src/utils/config.py
+      - src/utils/logger.py
+      - data/raw
+      - config.yaml
+    params:
+      - params.yaml:
+        - prepare.img_size
+        - prepare.test_split
+        - prepare.val_split
+        - prepare.seed
+        - prepare.min_images
+    outs:
+      - data/processed/v1_resized
+
+  # ─────────────────────────────────────────────────────
+  # Stage 2: Transform
+  # HOG feature extraction + v2 augmented dataset
+  # ─────────────────────────────────────────────────────
+  transform:
+    cmd: python -m src.transform
+    deps:
+      - src/transform.py
+      - src/utils/config.py
+      - src/utils/logger.py
+      - data/processed/v1_resized
+      - config.yaml
+    params:
+      - params.yaml:
+        - transform.method
+        - transform.hog_orientations
+        - transform.hog_pixels_per_cell
+        - transform.hog_cells_per_block
+    outs:
+      - data/processed/v2_augmented
+      - data/features
+
+  # ─────────────────────────────────────────────────────
+  # Stage 3a: Train SVM
+  # HOG features + StandardScaler + SVM
+  # ─────────────────────────────────────────────────────
+  train_svm:
+    cmd: python -m src.train_svm
+    deps:
+      - src/train_svm.py
+      - src/utils/config.py
+      - src/utils/logger.py
+      - data/features
+      - config.yaml
+    params:
+      - params.yaml:
+        - train_svm.C
+        - train_svm.kernel
+        - train_svm.seed
+    outs:
+      - models/svm_model.pkl
+
+  # ─────────────────────────────────────────────────────
+  # Stage 3b: Train MLP
+  # HOG features + PCA + MLP
+  # ─────────────────────────────────────────────────────
+  train_mlp:
+    cmd: python -m src.train_mlp
+    deps:
+      - src/train_mlp.py
+      - src/utils/config.py
+      - src/utils/logger.py
+      - data/features
+      - config.yaml
+    params:
+      - params.yaml:
+        - train_mlp.hidden_layers
+        - train_mlp.max_iter
+        - train_mlp.seed
+        - train_mlp.pca_components
+        - train_mlp.learning_rate_init
+    outs:
+      - models/mlp_model.pkl
+
+  # ─────────────────────────────────────────────────────
+  # Stage 3c: Train CNN
+  # MobileNetV2 transfer learning with class weights
+  # ─────────────────────────────────────────────────────
+  train_cnn:
+    cmd: python -m src.train_cnn
+    deps:
+      - src/train_cnn.py
+      - src/utils/config.py
+      - src/utils/logger.py
+      - data/processed/v1_resized
+      - config.yaml
+    params:
+      - params.yaml:
+        - train_cnn.base_model
+        - train_cnn.epochs
+        - train_cnn.phase1_epochs      
+        - train_cnn.batch_size
+        - train_cnn.learning_rate
+        - train_cnn.unfreeze_layers    
+        - train_cnn.finetune_lr        
+        - train_cnn.seed
+        - train_cnn.dropout1
+        - train_cnn.dropout2
+        - train_cnn.max_class_weight
+    outs:
+      - models/cnn_model.h5
+      - metrics/cnn_training_history.csv:
+          cache: false
+
+  # ─────────────────────────────────────────────────────
+  # Stage 4: Evaluate
+  # Evaluates all 3 models on test set
+  # Generates F1 scores and confusion matrices
+  # ─────────────────────────────────────────────────────
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+      - src/evaluate.py
+      - src/utils/config.py
+      - src/utils/logger.py
+      - models/svm_model.pkl
+      - models/mlp_model.pkl
+      - models/cnn_model.h5
+      - data/features
+      - data/processed/v1_resized
+      - config.yaml
+    outs: []
+    metrics:
+      - metrics/scores.json:
+          cache: false
+
+# ─────────────────────────────────────────────────────
+# Plot configurations (defined at top level)
+# ─────────────────────────────────────────────────────
+plots:
+  - metrics/cnn_training_history.csv:
+      x: epoch
+      y: val_accuracy
+  - metrics/f1_comparison.csv:
+      template: bar_horizontal
+      x: macro_f1 
+      y: model
+  - metrics/confusion_matrix.csv:
+      template: confusion
+      x: predicted
+      y: actual

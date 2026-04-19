@@ -1,0 +1,39 @@
+# Airflow logs and runtime files
+logs/
+config/airflow.cfg
+config/airflow_webserver_config.py
+
+# Airflow DB (if using SQLite locally)
+*.db
+*.sqlite
+
+# Scraped data (large files, not needed in repo)
+scraped_data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Conda / virtualenv
+.env
+*.env
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Data input files (optional - remove this if you want test CSVs tracked)
+data/input/*.csv

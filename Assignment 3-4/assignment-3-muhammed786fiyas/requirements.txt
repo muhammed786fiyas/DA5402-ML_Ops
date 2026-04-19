@@ -1,0 +1,19 @@
+# Core
+numpy
+pandas
+Pillow
+opencv-python
+PyYAML
+
+# Machine Learning
+scikit-learn
+scikit-image
+scipy
+tensorflow
+keras
+
+# DVC
+dvc
+
+# Visualization
+matplotlib

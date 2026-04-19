@@ -1,0 +1,39 @@
+paths:
+  # Input
+  raw_dir: "data/raw"
+
+  # Version 1 — just resized (prepare stage output)
+  processed_dir: "data/processed/v1_resized"
+  train_dir: "data/processed/v1_resized/train"
+  val_dir: "data/processed/v1_resized/val"
+  test_dir: "data/processed/v1_resized/test"
+
+  # Version 2 — augmented (transform stage output)
+  augmented_dir: "data/processed/v2_augmented"
+  aug_train_dir: "data/processed/v2_augmented/train"
+  aug_val_dir: "data/processed/v2_augmented/val"
+  aug_test_dir: "data/processed/v2_augmented/test"
+
+  # Features (after transform stage)
+  features_dir: "data/features"
+  features_train: "data/features/hog_train.npy"
+  features_val: "data/features/hog_val.npy"
+  features_test: "data/features/hog_test.npy"
+  labels_train: "data/features/labels_train.npy"
+  labels_val: "data/features/labels_val.npy"
+  labels_test: "data/features/labels_test.npy"
+
+  # Models
+  models_dir: "models"
+  svm_model: "models/svm_model.pkl"
+  mlp_model: "models/mlp_model.pkl"
+  cnn_model: "models/cnn_model.h5"
+
+  # Metrics and plots
+  metrics_dir: "metrics"
+  metrics_file: "metrics/scores.json"
+  confusion_matrix: "metrics/confusion_matrix.csv"
+  f1_history: "metrics/f1_history.csv"
+
+  # Logs
+  logs_dir: "logs"

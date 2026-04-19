@@ -1,0 +1,81 @@
+groups:
+  - name: app_alerts
+    rules:
+      - alert: AppDown
+        expr: up{job="streamlit_app"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Streamlit app is DOWN"
+          description: "App unreachable for more than 1 minute."
+
+      - alert: HighErrorRate
+        expr: rate(app_errors_total[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High application error rate"
+          description: "Error rate is {{ $value | printf \"%.2f\" }} errors/sec."
+
+      - alert: SlowInferenceP95
+        expr: histogram_quantile(0.95, rate(inference_latency_seconds_bucket[5m])) > 15
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "P95 inference latency too high"
+          description: "95th percentile latency is {{ $value | printf \"%.1f\" }}s."
+
+      - alert: NoImagesProcessed
+        # AI-generated PromQL | Prompt: "Write PromQL to detect when no images have been processed in last 10 minutes"
+        expr: rate(images_processed_total[10m]) == 0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "No images processed in last 10 minutes"
+
+  - name: system_alerts
+    rules:
+      - alert: HighCPUUsage
+        # AI-generated PromQL | Prompt: "Write PromQL to calculate CPU usage percentage from node_exporter idle mode"
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 80
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU usage exceeded 80%"
+          description: "CPU is at {{ $value | printf \"%.1f\" }}% for over 2 minutes."
+
+      - alert: CriticalCPUUsage
+        # AI-generated PromQL | Prompt: "Write PromQL to calculate CPU usage percentage from node_exporter idle mode"
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 95
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "CPU critically high"
+          description: "CPU is at {{ $value | printf \"%.1f\" }}%."
+
+      - alert: HighMemoryUsage
+        # AI-generated PromQL | Prompt: "Write PromQL to calculate memory usage percentage from node_exporter"
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Memory usage exceeded 85%"
+
+      - alert: BulkUploadCPUSaturation
+        # AI-generated PromQL | Prompt: "Write PromQL to detect when bulk upload is active AND CPU is above 80%"
+        expr: |
+          rate(images_processed_total{mode="bulk"}[5m]) > 0
+          and
+          100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 80
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Bulk upload causing CPU saturation"

@@ -1,0 +1,36 @@
+{
+  "model": "efficientnetb0",
+  "train": {
+    "accuracy": 0.8366,
+    "macro_precision": 0.8307,
+    "macro_recall": 0.9275,
+    "macro_f1": 0.8676,
+    "micro_precision": 0.8366,
+    "micro_recall": 0.8366,
+    "micro_f1": 0.8366,
+    "auc_roc": 0.9932,
+    "auprc": 0.9571
+  },
+  "validation": {
+    "accuracy": 0.5133,
+    "macro_precision": 0.2754,
+    "macro_recall": 0.316,
+    "macro_f1": 0.2838,
+    "micro_precision": 0.5133,
+    "micro_recall": 0.5133,
+    "micro_f1": 0.5133,
+    "auc_roc": 0.8868,
+    "auprc": 0.4361
+  },
+  "test": {
+    "accuracy": 0.5929,
+    "macro_precision": 0.4257,
+    "macro_recall": 0.4767,
+    "macro_f1": 0.432,
+    "micro_precision": 0.5929,
+    "micro_recall": 0.5929,
+    "micro_f1": 0.5929,
+    "auc_roc": 0.9506,
+    "auprc": 0.6011
+  }
+}

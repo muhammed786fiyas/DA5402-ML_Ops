@@ -1,0 +1,4 @@
+model_id,model,macro_f1
+1,SVM,0.067
+2,MLP,0.0895
+3,CNN,0.432

@@ -1,0 +1,37 @@
+prepare:
+  img_size: 224
+  test_split: 0.1
+  val_split: 0.1
+  seed: 42
+  min_images: 3
+
+transform:
+  method: hog
+  hog_orientations: 9
+  hog_pixels_per_cell: 8
+  hog_cells_per_block: 2
+
+train_svm:
+  C: 1.0
+  kernel: rbf
+  seed: 42
+
+train_mlp:
+  hidden_layers: [256, 128]
+  max_iter: 200
+  seed: 42
+  pca_components: 200
+  learning_rate_init: 0.001
+
+train_cnn:
+  base_model: efficientnetb0
+  epochs: 50
+  batch_size: 16
+  learning_rate: 0.0005
+  seed: 42
+  dropout1: 0.4
+  dropout2: 0.3
+  phase1_epochs: 20
+  unfreeze_layers: 20    
+  finetune_lr: 0.00001
+  max_class_weight: 5.0

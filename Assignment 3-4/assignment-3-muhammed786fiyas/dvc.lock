@@ -1,0 +1,244 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python -m src.prepare
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: e060e64efe731e33e02c363f370c004b
+      size: 1223
+    - path: data/raw
+      hash: md5
+      md5: 0ce8b719703b1116f55f0e00e9997db1.dir
+      size: 290525365
+      nfiles: 1223
+    - path: src/prepare.py
+      hash: md5
+      md5: 2a491bf1930cf8167e4e3566a6906d31
+      size: 7293
+    - path: src/utils/config.py
+      hash: md5
+      md5: c8af09c9d94117de72e503e0cb686ff3
+      size: 341
+    - path: src/utils/logger.py
+      hash: md5
+      md5: 1f0263e188d06d0af39563444cb95ff9
+      size: 997
+    params:
+      params.yaml:
+        prepare.img_size: 224
+        prepare.min_images: 3
+        prepare.seed: 42
+        prepare.test_split: 0.1
+        prepare.val_split: 0.1
+    outs:
+    - path: data/processed/v1_resized
+      hash: md5
+      md5: 12269c7fd86f695e8d2cad98d5e96e41.dir
+      size: 20173086
+      nfiles: 1187
+  transform:
+    cmd: python -m src.transform
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: e060e64efe731e33e02c363f370c004b
+      size: 1223
+    - path: data/processed/v1_resized
+      hash: md5
+      md5: 12269c7fd86f695e8d2cad98d5e96e41.dir
+      size: 20173086
+      nfiles: 1187
+    - path: src/transform.py
+      hash: md5
+      md5: 15400a2ffbd4114bc8d3a67684c01472
+      size: 13219
+    - path: src/utils/config.py
+      hash: md5
+      md5: c8af09c9d94117de72e503e0cb686ff3
+      size: 341
+    - path: src/utils/logger.py
+      hash: md5
+      md5: 1f0263e188d06d0af39563444cb95ff9
+      size: 997
+    params:
+      params.yaml:
+        transform.hog_cells_per_block: 2
+        transform.hog_orientations: 9
+        transform.hog_pixels_per_cell: 8
+        transform.method: hog
+    outs:
+    - path: data/features
+      hash: md5
+      md5: a553cc395db7cf43b3586a0f88d5da05.dir
+      size: 450995400
+      nfiles: 7
+    - path: data/processed/v2_augmented
+      hash: md5
+      md5: e8b7f59fc6afc6099500923b9152f2fe.dir
+      size: 33970283
+      nfiles: 2148
+  train_svm:
+    cmd: python -m src.train_svm
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: e060e64efe731e33e02c363f370c004b
+      size: 1223
+    - path: data/features
+      hash: md5
+      md5: a553cc395db7cf43b3586a0f88d5da05.dir
+      size: 450995400
+      nfiles: 7
+    - path: src/train_svm.py
+      hash: md5
+      md5: d5ff24ddb6ae6dfd598b25b6a0f8feff
+      size: 9057
+    - path: src/utils/config.py
+      hash: md5
+      md5: c8af09c9d94117de72e503e0cb686ff3
+      size: 341
+    - path: src/utils/logger.py
+      hash: md5
+      md5: 1f0263e188d06d0af39563444cb95ff9
+      size: 997
+    params:
+      params.yaml:
+        train_svm.C: 1.0
+        train_svm.kernel: rbf
+        train_svm.seed: 42
+    outs:
+    - path: models/svm_model.pkl
+      hash: md5
+      md5: d1d5f90695c9609d0715378b72911632
+      size: 404046028
+  train_mlp:
+    cmd: python -m src.train_mlp
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: e060e64efe731e33e02c363f370c004b
+      size: 1223
+    - path: data/features
+      hash: md5
+      md5: a553cc395db7cf43b3586a0f88d5da05.dir
+      size: 450995400
+      nfiles: 7
+    - path: src/train_mlp.py
+      hash: md5
+      md5: 76cac50563528575f1930af2d708495b
+      size: 10589
+    - path: src/utils/config.py
+      hash: md5
+      md5: c8af09c9d94117de72e503e0cb686ff3
+      size: 341
+    - path: src/utils/logger.py
+      hash: md5
+      md5: 1f0263e188d06d0af39563444cb95ff9
+      size: 997
+    params:
+      params.yaml:
+        train_mlp.hidden_layers:
+        - 256
+        - 128
+        train_mlp.learning_rate_init: 0.001
+        train_mlp.max_iter: 200
+        train_mlp.pca_components: 200
+        train_mlp.seed: 42
+    outs:
+    - path: models/mlp_model.pkl
+      hash: md5
+      md5: abfa92b1b1f3667f49445146b4a0a0ba
+      size: 44931369
+  train_cnn:
+    cmd: python -m src.train_cnn
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: e060e64efe731e33e02c363f370c004b
+      size: 1223
+    - path: data/processed/v1_resized
+      hash: md5
+      md5: 12269c7fd86f695e8d2cad98d5e96e41.dir
+      size: 20173086
+      nfiles: 1187
+    - path: src/train_cnn.py
+      hash: md5
+      md5: 46198e83ddf5190dbfc3f87334795e1d
+      size: 23759
+    - path: src/utils/config.py
+      hash: md5
+      md5: c8af09c9d94117de72e503e0cb686ff3
+      size: 341
+    - path: src/utils/logger.py
+      hash: md5
+      md5: 1f0263e188d06d0af39563444cb95ff9
+      size: 997
+    params:
+      params.yaml:
+        train_cnn.base_model: efficientnetb0
+        train_cnn.batch_size: 16
+        train_cnn.dropout1: 0.4
+        train_cnn.dropout2: 0.3
+        train_cnn.epochs: 50
+        train_cnn.finetune_lr: 1e-05
+        train_cnn.learning_rate: 0.0005
+        train_cnn.max_class_weight: 5.0
+        train_cnn.phase1_epochs: 20
+        train_cnn.seed: 42
+        train_cnn.unfreeze_layers: 20
+    outs:
+    - path: metrics/cnn_training_history.csv
+      hash: md5
+      md5: 575c55f75edab92e33038c4c656fe35d
+      size: 2250
+    - path: models/cnn_model.h5
+      hash: md5
+      md5: 77b0aa39e268d70283b874eaf8b51073
+      size: 32102336
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: e060e64efe731e33e02c363f370c004b
+      size: 1223
+    - path: data/features
+      hash: md5
+      md5: a553cc395db7cf43b3586a0f88d5da05.dir
+      size: 450995400
+      nfiles: 7
+    - path: data/processed/v1_resized
+      hash: md5
+      md5: 12269c7fd86f695e8d2cad98d5e96e41.dir
+      size: 20173086
+      nfiles: 1187
+    - path: models/cnn_model.h5
+      hash: md5
+      md5: 77b0aa39e268d70283b874eaf8b51073
+      size: 32102336
+    - path: models/mlp_model.pkl
+      hash: md5
+      md5: abfa92b1b1f3667f49445146b4a0a0ba
+      size: 44931369
+    - path: models/svm_model.pkl
+      hash: md5
+      md5: d1d5f90695c9609d0715378b72911632
+      size: 404046028
+    - path: src/evaluate.py
+      hash: md5
+      md5: e37b12143653eb475f21909cc859a40b
+      size: 16172
+    - path: src/utils/config.py
+      hash: md5
+      md5: c8af09c9d94117de72e503e0cb686ff3
+      size: 341
+    - path: src/utils/logger.py
+      hash: md5
+      md5: 1f0263e188d06d0af39563444cb95ff9
+      size: 997
+    outs:
+    - path: metrics/scores.json
+      hash: md5
+      md5: c63b00b327665a561caf5f1262a5eb3f
+      size: 282
