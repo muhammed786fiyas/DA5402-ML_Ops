@@ -1,0 +1,15 @@
+{
+    "training_date": "2026-02-15 12:23:55",
+    "generated_by_script": "src/train.py",
+    "dataset_version": "v4",
+    "git_commit_hash": "064e3d1c0b966309a7055c7a33305a28a644ee0b",
+    "algorithm": "RandomForest",
+    "model_parameters": {
+        "algorithm": "RandomForest",
+        "n_estimators": 50,
+        "max_depth": 5,
+        "random_state": 42
+    },
+    "model_path": "models\\model_v4.pkl",
+    "training_accuracy": 0.9708571428571429
+}
