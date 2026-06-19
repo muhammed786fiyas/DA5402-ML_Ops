@@ -1,0 +1,818 @@
+/home/muhammed786fiyas/Desktop/Projects/ml_ops/assignment_8/assignment-8-muhammed786fiyas/scripts/pipeline_ray.py:94: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  metrics = {"framework": "ray", "started_at": datetime.utcnow().isoformat()}
+2026-05-05 02:55:41,889	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.250.139.217:6379...
+2026-05-05 02:55:41,921	INFO worker.py:2012 -- Connected to Ray cluster.
+/home/muhammed786fiyas/Desktop/Projects/ml_ops/assignment_8/assignment-8-muhammed786fiyas/venv/lib/python3.13/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+2026-05-05 02:55:42,097	WARNING tqdm_ray.py:319 -- tqdm is not installed. Progress bars will be disabled.
+2026-05-05 02:55:42,720	INFO parquet_datasource.py:1133 -- Estimated parquet encoding ratio is 3.319.
+2026-05-05 02:55:42,721	INFO parquet_datasource.py:1193 -- Estimated parquet reader batch size at 2546918 rows
+2026-05-05 02:55:42,736	INFO logging.py:416 -- Registered dataset logger for dataset dataset_10_0
+2026-05-05 02:55:42,745	INFO streaming_executor.py:166 -- Starting execution of Dataset dataset_10_0. Full logs are in /tmp/ray/session_2026-05-05_02-41-29_484058_139488/logs/ray-data
+2026-05-05 02:55:42,745	INFO streaming_executor.py:167 -- Execution plan of Dataset dataset_10_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadParquet] -> AggregateNumRows[AggregateNumRows]
+2026-05-05 02:55:42,749	WARNING resource_manager.py:169 -- ⚠️  Ray's object store is configured to use only 42.9% of available memory (8.4GiB out of 19.6GiB total). For optimal Ray Data performance, we recommend setting the object store to at least 50% of available memory. You can do this by setting the 'object_store_memory' parameter when calling ray.init() or by setting the RAY_DEFAULT_OBJECT_STORE_MEMORY_PROPORTION environment variable.
+2026-05-05 02:55:42,749	INFO __init__.py:56 -- Progress will be logged because stdout is a non-interactive terminal.
+2026-05-05 02:55:42,766	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_10_0 =======
+2026-05-05 02:55:42,767	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:55:42,767	INFO logging_progress.py:227 -- Active & requested resources: 0/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 02:55:42,767	INFO logging_progress.py:181 -- 
+2026-05-05 02:55:42,767	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 0/1
+2026-05-05 02:55:42,767	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 2 (0.0B); Resources: 1.0 CPU, 0.0B object store
+2026-05-05 02:55:42,767	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:55:42,767	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:55:42,767	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:55:47,239	INFO streaming_executor.py:294 -- ✔️  Dataset dataset_10_0 execution finished in 4.49 seconds
+2026-05-05 02:55:47,252	INFO logging.py:416 -- Registered dataset logger for dataset dataset_12_0
+2026-05-05 02:55:47,256	INFO streaming_executor.py:166 -- Starting execution of Dataset dataset_12_0. Full logs are in /tmp/ray/session_2026-05-05_02-41-29_484058_139488/logs/ray-data
+2026-05-05 02:55:47,256	INFO streaming_executor.py:167 -- Execution plan of Dataset dataset_12_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadParquet] -> TaskPoolMapOperator[MapBatches(cleanse_batch)->Project] -> AggregateNumRows[AggregateNumRows]
+2026-05-05 02:55:47,278	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:55:47,278	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:55:47,278	INFO logging_progress.py:227 -- Active & requested resources: 0/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 02:55:47,278	INFO logging_progress.py:181 -- 
+2026-05-05 02:55:47,278	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 0/1
+2026-05-05 02:55:47,278	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 2 (0.0B); Resources: 1.0 CPU, 0.0B object store
+2026-05-05 02:55:47,278	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 0/1
+2026-05-05 02:55:47,278	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:55:47,278	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:55:47,278	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:55:47,278	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:55:57,327	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:55:57,327	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:55:57,327	INFO logging_progress.py:227 -- Active & requested resources: 20/24 CPU, 362.1MiB/4.2GiB object store
+2026-05-05 02:55:57,327	INFO logging_progress.py:181 -- 
+2026-05-05 02:55:57,327	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:55:57,327	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 354.9MiB object store
+2026-05-05 02:55:57,328	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 2096620/11467228
+2026-05-05 02:55:57,328	INFO logging_progress.py:233 --   Tasks: 20; Actors: 0; Queued blocks: 199 (311.7MiB); Resources: 20.0 CPU, 6.8MiB object store
+2026-05-05 02:55:57,328	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:55:57,328	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 1 (292.9KiB); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:55:57,328	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:56:07,346	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:56:07,346	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:56:07,346	INFO logging_progress.py:227 -- Active & requested resources: 23/24 CPU, 284.2MiB/4.2GiB object store
+2026-05-05 02:56:07,346	INFO logging_progress.py:181 -- 
+2026-05-05 02:56:07,346	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:56:07,346	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 276.3MiB object store
+2026-05-05 02:56:07,346	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 3679943/11602644
+2026-05-05 02:56:07,346	INFO logging_progress.py:233 --   Tasks: 23; Actors: 0; Queued blocks: 160 (226.6MiB); Resources: 23.0 CPU, 7.6MiB object store
+2026-05-05 02:56:07,346	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:56:07,346	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:56:07,346	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:56:17,440	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:56:17,440	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:56:17,440	INFO logging_progress.py:227 -- Active & requested resources: 23/24 CPU, 231.9MiB/4.2GiB object store
+2026-05-05 02:56:17,440	INFO logging_progress.py:181 -- 
+2026-05-05 02:56:17,440	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:56:17,440	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 224.3MiB object store
+2026-05-05 02:56:17,440	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 4721465/11608740
+2026-05-05 02:56:17,440	INFO logging_progress.py:233 --   Tasks: 24; Actors: 0; Queued blocks: 135 (171.8MiB); Resources: 24.0 CPU, 7.9MiB object store
+2026-05-05 02:56:17,440	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:56:17,440	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:56:17,440	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:56:27,518	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:56:27,518	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:56:27,519	INFO logging_progress.py:227 -- Active & requested resources: 23/24 CPU, 192.7MiB/4.2GiB object store
+2026-05-05 02:56:27,519	INFO logging_progress.py:181 -- 
+2026-05-05 02:56:27,519	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:56:27,519	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 184.8MiB object store
+2026-05-05 02:56:27,519	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 5514641/11637195
+2026-05-05 02:56:27,519	INFO logging_progress.py:233 --   Tasks: 23; Actors: 0; Queued blocks: 118 (134.7MiB); Resources: 23.0 CPU, 7.6MiB object store
+2026-05-05 02:56:27,519	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:56:27,519	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:56:27,519	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:56:37,618	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:56:37,619	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:56:37,619	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 153.5MiB/4.2GiB object store
+2026-05-05 02:56:37,619	INFO logging_progress.py:181 -- 
+2026-05-05 02:56:37,619	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:56:37,619	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 145.7MiB object store
+2026-05-05 02:56:37,619	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 6294999/11399052
+2026-05-05 02:56:37,619	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 96 (98.6MiB); Resources: 24.0 CPU, 7.8MiB object store
+2026-05-05 02:56:37,619	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:56:37,619	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:56:37,619	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:56:47,681	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:56:47,681	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:56:47,681	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 142.0MiB/4.2GiB object store
+2026-05-05 02:56:47,681	INFO logging_progress.py:181 -- 
+2026-05-05 02:56:47,681	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:56:47,681	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 134.3MiB object store
+2026-05-05 02:56:47,681	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 6516067/11266490
+2026-05-05 02:56:47,681	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 89 (92.1MiB); Resources: 24.0 CPU, 7.7MiB object store
+2026-05-05 02:56:47,681	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:56:47,681	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:56:47,681	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:56:57,757	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:56:57,757	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:56:57,757	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 119.2MiB/4.2GiB object store
+2026-05-05 02:56:57,757	INFO logging_progress.py:181 -- 
+2026-05-05 02:56:57,757	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:56:57,757	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 111.7MiB object store
+2026-05-05 02:56:57,757	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 6973764/10993934
+2026-05-05 02:56:57,757	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 74 (79.3MiB); Resources: 24.0 CPU, 7.5MiB object store
+2026-05-05 02:56:57,757	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:56:57,757	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:56:57,757	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:57:07,856	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:57:07,856	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:57:07,856	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 85.3MiB/4.2GiB object store
+2026-05-05 02:57:07,856	INFO logging_progress.py:181 -- 
+2026-05-05 02:57:07,856	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:57:07,856	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 78.3MiB object store
+2026-05-05 02:57:07,856	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 7644954/10193272
+2026-05-05 02:57:07,856	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 43 (55.0MiB); Resources: 24.0 CPU, 7.0MiB object store
+2026-05-05 02:57:07,856	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:57:07,856	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:57:07,856	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:57:17,865	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:57:17,865	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:57:17,865	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 59.0MiB/4.2GiB object store
+2026-05-05 02:57:17,865	INFO logging_progress.py:181 -- 
+2026-05-05 02:57:17,865	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:57:17,865	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 52.5MiB object store
+2026-05-05 02:57:17,865	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 8202895/9466931
+2026-05-05 02:57:17,865	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 13 (26.4MiB); Resources: 24.0 CPU, 6.5MiB object store
+2026-05-05 02:57:17,866	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:57:17,866	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:57:17,866	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:57:27,939	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:57:27,939	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:57:27,939	INFO logging_progress.py:227 -- Active & requested resources: 13/24 CPU, 25.0MiB/4.2GiB object store
+2026-05-05 02:57:27,939	INFO logging_progress.py:181 -- 
+2026-05-05 02:57:27,939	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:57:27,939	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 21.5MiB object store
+2026-05-05 02:57:27,939	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 8799178/9247764
+2026-05-05 02:57:27,939	INFO logging_progress.py:233 --   Tasks: 13; Actors: 0; Queued blocks: 0 (0.0B); Resources: 13.0 CPU, 3.4MiB object store
+2026-05-05 02:57:27,939	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:57:27,939	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:57:27,939	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:57:37,985	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_12_0 =======
+2026-05-05 02:57:37,985	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:57:37,985	INFO logging_progress.py:227 -- Active & requested resources: 7/24 CPU, 14.4MiB/4.2GiB object store
+2026-05-05 02:57:37,985	INFO logging_progress.py:181 -- 
+2026-05-05 02:57:37,985	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:57:37,985	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 12.6MiB object store
+2026-05-05 02:57:37,985	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->Project: 8986229/9227239
+2026-05-05 02:57:37,985	INFO logging_progress.py:233 --   Tasks: 7; Actors: 0; Queued blocks: 0 (0.0B); Resources: 7.0 CPU, 1.8MiB object store
+2026-05-05 02:57:37,985	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:57:37,985	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:57:37,986	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:57:44,508	INFO streaming_executor.py:294 -- ✔️  Dataset dataset_12_0 execution finished in 117.25 seconds
+2026-05-05 02:57:44,526	INFO logging.py:416 -- Registered dataset logger for dataset dataset_14_0
+2026-05-05 02:57:44,530	INFO streaming_executor.py:166 -- Starting execution of Dataset dataset_14_0. Full logs are in /tmp/ray/session_2026-05-05_02-41-29_484058_139488/logs/ray-data
+2026-05-05 02:57:44,530	INFO streaming_executor.py:167 -- Execution plan of Dataset dataset_14_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadParquet] -> TaskPoolMapOperator[MapBatches(cleanse_batch)->MapBatches(join_zones)->Project] -> AggregateNumRows[AggregateNumRows]
+2026-05-05 02:57:44,550	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:57:44,550	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:57:44,550	INFO logging_progress.py:227 -- Active & requested resources: 0/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 02:57:44,550	INFO logging_progress.py:181 -- 
+2026-05-05 02:57:44,550	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 0/1
+2026-05-05 02:57:44,550	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 2 (0.0B); Resources: 1.0 CPU, 0.0B object store
+2026-05-05 02:57:44,550	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 0/1
+2026-05-05 02:57:44,550	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:57:44,550	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:57:44,550	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:57:44,550	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:57:54,624	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:57:54,625	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:57:54,625	INFO logging_progress.py:227 -- Active & requested resources: 19/24 CPU, 267.6MiB/4.2GiB object store
+2026-05-05 02:57:54,625	INFO logging_progress.py:181 -- 
+2026-05-05 02:57:54,625	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 8035552/8741865
+2026-05-05 02:57:54,625	INFO logging_progress.py:233 --   Tasks: 2; Actors: 0; Queued blocks: 0 (0.0B); Resources: 2.0 CPU, 267.6MiB object store
+2026-05-05 02:57:54,625	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 2858624/8705809
+2026-05-05 02:57:54,625	INFO logging_progress.py:233 --   Tasks: 17; Actors: 0; Queued blocks: 111 (220.9MiB); Resources: 17.0 CPU, 2.2KiB object store
+2026-05-05 02:57:54,625	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:57:54,625	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:57:54,625	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:58:04,690	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:58:04,690	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:58:04,690	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 210.4MiB/4.2GiB object store
+2026-05-05 02:58:04,690	INFO logging_progress.py:181 -- 
+2026-05-05 02:58:04,690	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:58:04,690	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 210.4MiB object store
+2026-05-05 02:58:04,690	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 5177901/11759979
+2026-05-05 02:58:04,690	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 126 (157.8MiB); Resources: 24.0 CPU, 3.1KiB object store
+2026-05-05 02:58:04,690	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:58:04,690	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:58:04,690	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:58:14,738	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:58:14,738	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:58:14,738	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 169.9MiB/4.2GiB object store
+2026-05-05 02:58:14,738	INFO logging_progress.py:181 -- 
+2026-05-05 02:58:14,738	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:58:14,738	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 169.9MiB object store
+2026-05-05 02:58:14,738	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 5992312/11808380
+2026-05-05 02:58:14,738	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 108 (119.8MiB); Resources: 24.0 CPU, 3.1KiB object store
+2026-05-05 02:58:14,738	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:58:14,738	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:58:14,738	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:58:24,826	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:58:24,826	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:58:24,827	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 119.0MiB/4.2GiB object store
+2026-05-05 02:58:24,827	INFO logging_progress.py:181 -- 
+2026-05-05 02:58:24,827	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:58:24,827	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 119.0MiB object store
+2026-05-05 02:58:24,827	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 7013617/11549896
+2026-05-05 02:58:24,827	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 83 (71.9MiB); Resources: 24.0 CPU, 3.2KiB object store
+2026-05-05 02:58:24,827	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:58:24,827	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 1 (132.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:58:24,827	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:58:34,827	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:58:34,827	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:58:34,827	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 80.9MiB/4.2GiB object store
+2026-05-05 02:58:34,827	INFO logging_progress.py:181 -- 
+2026-05-05 02:58:34,827	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:58:34,827	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 80.9MiB object store
+2026-05-05 02:58:34,827	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 7654648/10740553
+2026-05-05 02:58:34,827	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 53 (51.5MiB); Resources: 24.0 CPU, 3.1KiB object store
+2026-05-05 02:58:34,827	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:58:34,827	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:58:34,827	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:58:44,916	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:58:44,917	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:58:44,917	INFO logging_progress.py:227 -- Active & requested resources: 24/24 CPU, 59.8MiB/4.2GiB object store
+2026-05-05 02:58:44,917	INFO logging_progress.py:181 -- 
+2026-05-05 02:58:44,917	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:58:44,917	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 59.8MiB object store
+2026-05-05 02:58:44,917	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 8067387/10246729
+2026-05-05 02:58:44,917	INFO logging_progress.py:233 --   Tasks: 24 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 33 (31.4MiB); Resources: 24.0 CPU, 3.1KiB object store
+2026-05-05 02:58:44,917	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:58:44,917	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:58:44,917	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:58:54,923	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:58:54,923	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:58:54,923	INFO logging_progress.py:227 -- Active & requested resources: 19/24 CPU, 19.1MiB/4.2GiB object store
+2026-05-05 02:58:54,923	INFO logging_progress.py:181 -- 
+2026-05-05 02:58:54,923	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:58:54,923	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 19.1MiB object store
+2026-05-05 02:58:54,923	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 8874176/9551322
+2026-05-05 02:58:54,923	INFO logging_progress.py:233 --   Tasks: 19; Actors: 0; Queued blocks: 0 (0.0B); Resources: 19.0 CPU, 2.4KiB object store
+2026-05-05 02:58:54,923	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:58:54,923	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:58:54,923	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:59:04,965	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:59:04,966	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:59:04,966	INFO logging_progress.py:227 -- Active & requested resources: 13/24 CPU, 16.5MiB/4.2GiB object store
+2026-05-05 02:59:04,966	INFO logging_progress.py:181 -- 
+2026-05-05 02:59:04,966	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:59:04,966	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 16.5MiB object store
+2026-05-05 02:59:04,966	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 8919271/9373979
+2026-05-05 02:59:04,966	INFO logging_progress.py:233 --   Tasks: 13; Actors: 0; Queued blocks: 0 (0.0B); Resources: 13.0 CPU, 1.7KiB object store
+2026-05-05 02:59:04,966	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:59:04,966	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:04,966	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:59:15,011	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:59:15,011	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:59:15,011	INFO logging_progress.py:227 -- Active & requested resources: 7/24 CPU, 8.8MiB/4.2GiB object store
+2026-05-05 02:59:15,011	INFO logging_progress.py:181 -- 
+2026-05-05 02:59:15,011	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:59:15,011	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 8.8MiB object store
+2026-05-05 02:59:15,012	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 9067357/9310543
+2026-05-05 02:59:15,012	INFO logging_progress.py:233 --   Tasks: 7; Actors: 0; Queued blocks: 0 (0.0B); Resources: 7.0 CPU, 924.0B object store
+2026-05-05 02:59:15,012	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:59:15,012	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:15,012	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:59:25,044	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_14_0 =======
+2026-05-05 02:59:25,045	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:59:25,045	INFO logging_progress.py:227 -- Active & requested resources: 5/24 CPU, 4.1MiB/4.2GiB object store
+2026-05-05 02:59:25,045	INFO logging_progress.py:181 -- 
+2026-05-05 02:59:25,045	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:59:25,045	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 4.1MiB object store
+2026-05-05 02:59:25,045	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->Project: 9167492/9341779
+2026-05-05 02:59:25,045	INFO logging_progress.py:233 --   Tasks: 5; Actors: 0; Queued blocks: 0 (0.0B); Resources: 5.0 CPU, 660.0B object store
+2026-05-05 02:59:25,045	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:59:25,045	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:25,045	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:59:30,252	INFO streaming_executor.py:294 -- ✔️  Dataset dataset_14_0 execution finished in 105.72 seconds
+2026-05-05 02:59:30,271	INFO logging.py:416 -- Registered dataset logger for dataset dataset_17_0
+2026-05-05 02:59:30,281	INFO streaming_executor.py:166 -- Starting execution of Dataset dataset_17_0. Full logs are in /tmp/ray/session_2026-05-05_02-41-29_484058_139488/logs/ray-data
+2026-05-05 02:59:30,281	INFO streaming_executor.py:167 -- Execution plan of Dataset dataset_17_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadParquet] -> TaskPoolMapOperator[MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch)] -> HashAggregateOperator[HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3)] -> TaskPoolMapOperator[Project] -> AggregateNumRows[AggregateNumRows]
+2026-05-05 02:59:30,324	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 02:59:30,324	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:59:30,324	INFO logging_progress.py:227 -- Active & requested resources: 0.75/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 02:59:30,324	INFO logging_progress.py:181 -- 
+2026-05-05 02:59:30,324	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 0/1
+2026-05-05 02:59:30,324	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 2 (0.0B); Resources: 1.0 CPU, 0.0B object store
+2026-05-05 02:59:30,324	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 0/1
+2026-05-05 02:59:30,324	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:30,324	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 0/1
+2026-05-05 02:59:30,324	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 0.0B object store
+2026-05-05 02:59:30,324	INFO logging_progress.py:231 --     - Shuffle: 0/1
+2026-05-05 02:59:30,324	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 02:59:30,324	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 02:59:30,324	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:30,324	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:59:30,324	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:30,324	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:59:40,398	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 02:59:40,398	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:59:40,398	INFO logging_progress.py:227 -- Active & requested resources: 16.75/24 CPU, 568.5MiB/4.2GiB object store
+2026-05-05 02:59:40,398	INFO logging_progress.py:181 -- 
+2026-05-05 02:59:40,398	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 8880157/9476582
+2026-05-05 02:59:40,398	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 1.0 CPU, 370.8MiB object store
+2026-05-05 02:59:40,398	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 1416149/8625635
+2026-05-05 02:59:40,398	INFO logging_progress.py:233 --   Tasks: 3 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 167 (360.5MiB); Resources: 3.0 CPU, 195.9MiB object store
+2026-05-05 02:59:40,399	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 901097/1
+2026-05-05 02:59:40,399	INFO logging_progress.py:233 --   Tasks: 12; Actors: 0; Queued blocks: 0 (0.0B); Resources: 12.8 CPU, 1.8MiB object store
+2026-05-05 02:59:40,399	INFO logging_progress.py:231 --     - Shuffle: 32874/314651
+2026-05-05 02:59:40,399	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 02:59:40,399	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 02:59:40,399	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:40,399	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:59:40,399	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:40,399	INFO logging_progress.py:192 -- =============================================
+2026-05-05 02:59:50,484	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 02:59:50,484	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 02:59:50,484	INFO logging_progress.py:227 -- Active & requested resources: 17.75/24 CPU, 548.9MiB/4.2GiB object store
+2026-05-05 02:59:50,484	INFO logging_progress.py:181 -- 
+2026-05-05 02:59:50,484	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 02:59:50,485	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 324.7MiB object store
+2026-05-05 02:59:50,485	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 2878407/11513628
+2026-05-05 02:59:50,485	INFO logging_progress.py:233 --   Tasks: 7 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 194 (308.4MiB); Resources: 7.0 CPU, 222.8MiB object store
+2026-05-05 02:59:50,485	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 2446603/1
+2026-05-05 02:59:50,485	INFO logging_progress.py:233 --   Tasks: 10; Actors: 0; Queued blocks: 0 (0.0B); Resources: 10.8 CPU, 1.5MiB object store
+2026-05-05 02:59:50,485	INFO logging_progress.py:231 --     - Shuffle: 84571/397632
+2026-05-05 02:59:50,485	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 02:59:50,485	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 02:59:50,485	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:50,485	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 02:59:50,485	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 02:59:50,485	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:00:00,551	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:00:00,552	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:00:00,552	INFO logging_progress.py:227 -- Active & requested resources: 17.75/24 CPU, 507.4MiB/4.2GiB object store
+2026-05-05 03:00:00,552	INFO logging_progress.py:181 -- 
+2026-05-05 03:00:00,552	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:00:00,552	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 277.4MiB object store
+2026-05-05 03:00:00,552	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 3835352/11680390
+2026-05-05 03:00:00,552	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 176 (268.2MiB); Resources: 4.0 CPU, 227.6MiB object store
+2026-05-05 03:00:00,552	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 3266870/1
+2026-05-05 03:00:00,552	INFO logging_progress.py:233 --   Tasks: 13; Actors: 0; Queued blocks: 0 (0.0B); Resources: 13.8 CPU, 2.4MiB object store
+2026-05-05 03:00:00,552	INFO logging_progress.py:231 --     - Shuffle: 138596/495250
+2026-05-05 03:00:00,552	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:00:00,552	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:00:00,552	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:00,552	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:00:00,552	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:00,552	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:00:10,581	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:00:10,581	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:00:10,581	INFO logging_progress.py:227 -- Active & requested resources: 17.75/24 CPU, 476.2MiB/4.2GiB object store
+2026-05-05 03:00:10,581	INFO logging_progress.py:181 -- 
+2026-05-05 03:00:10,581	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:00:10,581	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 243.7MiB object store
+2026-05-05 03:00:10,581	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 4511706/11739196
+2026-05-05 03:00:10,581	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 161 (235.2MiB); Resources: 4.0 CPU, 230.2MiB object store
+2026-05-05 03:00:10,581	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 3935732/1
+2026-05-05 03:00:10,581	INFO logging_progress.py:233 --   Tasks: 13; Actors: 0; Queued blocks: 0 (0.0B); Resources: 13.8 CPU, 2.3MiB object store
+2026-05-05 03:00:10,581	INFO logging_progress.py:231 --     - Shuffle: 161927/483391
+2026-05-05 03:00:10,581	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:00:10,582	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:00:10,582	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:10,582	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:00:10,582	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:10,582	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:00:20,680	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:00:20,680	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:00:20,680	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 699.4MiB/4.2GiB object store
+2026-05-05 03:00:20,680	INFO logging_progress.py:181 -- 
+2026-05-05 03:00:20,680	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:00:20,680	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 177.3MiB object store
+2026-05-05 03:00:20,680	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 5864311/11741310
+2026-05-05 03:00:20,680	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 131 (168.7MiB); Resources: 4.0 CPU, 519.6MiB object store
+2026-05-05 03:00:20,680	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 4348861/1
+2026-05-05 03:00:20,680	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 21 (284.7MiB); Resources: 14.8 CPU, 2.5MiB object store
+2026-05-05 03:00:20,680	INFO logging_progress.py:231 --     - Shuffle: 176072/476639
+2026-05-05 03:00:20,680	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:00:20,680	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:00:20,680	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:20,680	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:00:20,681	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:20,681	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:00:30,681	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:00:30,682	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:00:30,682	INFO logging_progress.py:227 -- Active & requested resources: 16.75/24 CPU, 852.1MiB/4.2GiB object store
+2026-05-05 03:00:30,682	INFO logging_progress.py:181 -- 
+2026-05-05 03:00:30,682	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:00:30,682	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 111.4MiB object store
+2026-05-05 03:00:30,682	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 7115965/11699869
+2026-05-05 03:00:30,682	INFO logging_progress.py:233 --   Tasks: 4; Actors: 0; Queued blocks: 101 (102.6MiB); Resources: 4.0 CPU, 765.0MiB object store
+2026-05-05 03:00:30,682	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 4799722/1
+2026-05-05 03:00:30,682	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 39 (519.5MiB); Resources: 14.8 CPU, 2.4MiB object store
+2026-05-05 03:00:30,682	INFO logging_progress.py:231 --     - Shuffle: 192105/468038
+2026-05-05 03:00:30,682	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:00:30,682	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:00:30,682	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:30,682	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:00:30,682	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:30,682	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:00:40,771	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:00:40,771	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:00:40,771	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 839.5MiB/4.2GiB object store
+2026-05-05 03:00:40,771	INFO logging_progress.py:181 -- 
+2026-05-05 03:00:40,771	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:00:40,771	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 87.2MiB object store
+2026-05-05 03:00:40,771	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 7592320/11693918
+2026-05-05 03:00:40,771	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 90 (78.1MiB); Resources: 4.0 CPU, 749.9MiB object store
+2026-05-05 03:00:40,771	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 5325706/1
+2026-05-05 03:00:40,771	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 38 (507.9MiB); Resources: 14.8 CPU, 2.4MiB object store
+2026-05-05 03:00:40,771	INFO logging_progress.py:231 --     - Shuffle: 210013/461340
+2026-05-05 03:00:40,771	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:00:40,771	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:00:40,771	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:40,771	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:00:40,771	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:40,771	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:00:50,831	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:00:50,832	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:00:50,832	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 639.8MiB/4.2GiB object store
+2026-05-05 03:00:50,832	INFO logging_progress.py:181 -- 
+2026-05-05 03:00:50,832	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:00:50,832	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 45.3MiB object store
+2026-05-05 03:00:50,832	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 8418615/11690098
+2026-05-05 03:00:50,832	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 71 (36.4MiB); Resources: 4.0 CPU, 592.1MiB object store
+2026-05-05 03:00:50,832	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 6665116/1
+2026-05-05 03:00:50,832	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 26 (346.6MiB); Resources: 14.8 CPU, 2.3MiB object store
+2026-05-05 03:00:50,832	INFO logging_progress.py:231 --     - Shuffle: 256400/449119
+2026-05-05 03:00:50,832	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:00:50,832	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:00:50,832	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:50,832	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:00:50,832	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:00:50,832	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:01:00,833	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:01:00,833	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:01:00,833	INFO logging_progress.py:227 -- Active & requested resources: 17.75/24 CPU, 371.1MiB/4.2GiB object store
+2026-05-05 03:01:00,833	INFO logging_progress.py:181 -- 
+2026-05-05 03:01:00,833	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:01:00,833	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 23.6MiB object store
+2026-05-05 03:01:00,833	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 8822012/11152355
+2026-05-05 03:01:00,833	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 52 (21.9MiB); Resources: 4.0 CPU, 345.4MiB object store
+2026-05-05 03:01:00,833	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 7868036/1
+2026-05-05 03:01:00,833	INFO logging_progress.py:233 --   Tasks: 14; Actors: 0; Queued blocks: 18 (110.3MiB); Resources: 14.8 CPU, 2.3MiB object store
+2026-05-05 03:01:00,833	INFO logging_progress.py:231 --     - Shuffle: 294735/438828
+2026-05-05 03:01:00,833	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:01:00,833	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:01:00,833	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:00,834	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:01:00,834	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:00,834	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:01:10,866	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:01:10,866	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:01:10,866	INFO logging_progress.py:227 -- Active & requested resources: 13.75/24 CPU, 76.3MiB/4.2GiB object store
+2026-05-05 03:01:10,866	INFO logging_progress.py:181 -- 
+2026-05-05 03:01:10,866	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:01:10,866	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 861.9KiB object store
+2026-05-05 03:01:10,866	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9228583/9297971
+2026-05-05 03:01:10,866	INFO logging_progress.py:233 --   Tasks: 2; Actors: 0; Queued blocks: 0 (0.0B); Resources: 2.0 CPU, 74.0MiB object store
+2026-05-05 03:01:10,866	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9056822/1
+2026-05-05 03:01:10,866	INFO logging_progress.py:233 --   Tasks: 12; Actors: 0; Queued blocks: 1 (2.2MiB); Resources: 12.8 CPU, 1.6MiB object store
+2026-05-05 03:01:10,866	INFO logging_progress.py:231 --     - Shuffle: 340803/361009
+2026-05-05 03:01:10,866	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:01:10,866	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:01:10,866	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:10,866	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:01:10,866	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:10,866	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:01:20,892	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:01:20,892	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:01:20,892	INFO logging_progress.py:227 -- Active & requested resources: 1.75/24 CPU, 14.3MiB/4.2GiB object store
+2026-05-05 03:01:20,892	INFO logging_progress.py:181 -- 
+2026-05-05 03:01:20,892	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:01:20,892	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:20,892	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:01:20,892	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 14.1MiB object store
+2026-05-05 03:01:20,892	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9197252/1
+2026-05-05 03:01:20,892	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 1.8 CPU, 148.2KiB object store
+2026-05-05 03:01:20,892	INFO logging_progress.py:231 --     - Shuffle: 388616/387482
+2026-05-05 03:01:20,892	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:01:20,892	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:01:20,892	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:20,892	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:01:20,892	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:20,892	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:01:30,897	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:01:30,897	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:01:30,897	INFO logging_progress.py:227 -- Active & requested resources: 1.75/24 CPU, 14.3MiB/4.2GiB object store
+2026-05-05 03:01:30,897	INFO logging_progress.py:181 -- 
+2026-05-05 03:01:30,897	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:01:30,897	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:30,897	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:01:30,897	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 14.1MiB object store
+2026-05-05 03:01:30,897	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9197252/1
+2026-05-05 03:01:30,898	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 1.8 CPU, 148.2KiB object store
+2026-05-05 03:01:30,898	INFO logging_progress.py:231 --     - Shuffle: 388616/387482
+2026-05-05 03:01:30,898	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:01:30,898	INFO logging_progress.py:231 -- Project: 0/1
+2026-05-05 03:01:30,898	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:30,898	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:01:30,898	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:30,898	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:01:40,923	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:01:40,923	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:01:40,923	INFO logging_progress.py:227 -- Active & requested resources: 1.75/24 CPU, 9.2MiB/4.2GiB object store
+2026-05-05 03:01:40,923	INFO logging_progress.py:181 -- 
+2026-05-05 03:01:40,923	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:01:40,923	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:40,923	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:01:40,923	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:40,923	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9243808/?
+2026-05-05 03:01:40,923	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 4.6MiB object store
+2026-05-05 03:01:40,923	INFO logging_progress.py:231 --     - Shuffle: 402427/387482
+2026-05-05 03:01:40,923	INFO logging_progress.py:231 --     - Aggregation: 133919/?
+2026-05-05 03:01:40,923	INFO logging_progress.py:231 -- Project: 66969/?
+2026-05-05 03:01:40,923	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 1.0 CPU, 4.6MiB object store
+2026-05-05 03:01:40,923	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:01:40,923	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:40,923	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:01:50,936	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:01:50,936	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:01:50,936	INFO logging_progress.py:227 -- Active & requested resources: 0.75/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 03:01:50,936	INFO logging_progress.py:181 -- 
+2026-05-05 03:01:50,936	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:01:50,936	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:50,936	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:01:50,936	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:50,936	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9243808/?
+2026-05-05 03:01:50,936	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 0.0B object store
+2026-05-05 03:01:50,936	INFO logging_progress.py:231 --     - Shuffle: 402427/387482
+2026-05-05 03:01:50,936	INFO logging_progress.py:231 --     - Aggregation: 133919/?
+2026-05-05 03:01:50,936	INFO logging_progress.py:231 -- Project: 133919/?
+2026-05-05 03:01:50,936	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:50,936	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:01:50,936	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:01:50,936	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:02:00,954	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_17_0 =======
+2026-05-05 03:02:00,954	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:02:00,954	INFO logging_progress.py:227 -- Active & requested resources: 0.75/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 03:02:00,954	INFO logging_progress.py:181 -- 
+2026-05-05 03:02:00,954	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:02:00,954	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:00,954	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:02:00,954	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:00,954	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9243808/?
+2026-05-05 03:02:00,954	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 0.0B object store
+2026-05-05 03:02:00,954	INFO logging_progress.py:231 --     - Shuffle: 402427/387482
+2026-05-05 03:02:00,955	INFO logging_progress.py:231 --     - Aggregation: 133919/?
+2026-05-05 03:02:00,955	INFO logging_progress.py:231 -- Project: 133919/?
+2026-05-05 03:02:00,955	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:00,955	INFO logging_progress.py:231 -- AggregateNumRows: 0/1
+2026-05-05 03:02:00,955	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:00,955	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:02:02,923	INFO streaming_executor.py:294 -- ✔️  Dataset dataset_17_0 execution finished in 152.64 seconds
+2026-05-05 03:02:02,949	INFO logging.py:416 -- Registered dataset logger for dataset dataset_19_0
+2026-05-05 03:02:02,955	INFO streaming_executor.py:166 -- Starting execution of Dataset dataset_19_0. Full logs are in /tmp/ray/session_2026-05-05_02-41-29_484058_139488/logs/ray-data
+2026-05-05 03:02:02,955	INFO streaming_executor.py:167 -- Execution plan of Dataset dataset_19_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadParquet] -> TaskPoolMapOperator[MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch)] -> HashAggregateOperator[HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3)] -> TaskPoolMapOperator[Write]
+2026-05-05 03:02:02,978	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:02:02,979	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:02:02,979	INFO logging_progress.py:227 -- Active & requested resources: 0.75/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 03:02:02,979	INFO logging_progress.py:181 -- 
+2026-05-05 03:02:02,979	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 0/1
+2026-05-05 03:02:02,979	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 2 (0.0B); Resources: 1.0 CPU, 0.0B object store
+2026-05-05 03:02:02,979	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 0/1
+2026-05-05 03:02:02,979	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:02,979	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 0/1
+2026-05-05 03:02:02,979	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 0.0B object store
+2026-05-05 03:02:02,979	INFO logging_progress.py:231 --     - Shuffle: 0/1
+2026-05-05 03:02:02,979	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:02:02,979	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:02:02,979	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:02,979	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:02:13,036	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:02:13,036	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:02:13,036	INFO logging_progress.py:227 -- Active & requested resources: 15.75/24 CPU, 593.2MiB/4.2GiB object store
+2026-05-05 03:02:13,036	INFO logging_progress.py:181 -- 
+2026-05-05 03:02:13,036	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 8918952/9476582
+2026-05-05 03:02:13,036	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 1.0 CPU, 394.1MiB object store
+2026-05-05 03:02:13,036	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 954548/8721098
+2026-05-05 03:02:13,036	INFO logging_progress.py:233 --   Tasks: 4; Actors: 0; Queued blocks: 182 (381.4MiB); Resources: 4.0 CPU, 197.7MiB object store
+2026-05-05 03:02:13,036	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 479073/1
+2026-05-05 03:02:13,036	INFO logging_progress.py:233 --   Tasks: 11; Actors: 0; Queued blocks: 0 (0.0B); Resources: 11.8 CPU, 1.6MiB object store
+2026-05-05 03:02:13,036	INFO logging_progress.py:231 --     - Shuffle: 16499/301482
+2026-05-05 03:02:13,037	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:02:13,037	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:02:13,037	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:13,037	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:02:23,144	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:02:23,144	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:02:23,145	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 681.1MiB/4.2GiB object store
+2026-05-05 03:02:23,145	INFO logging_progress.py:181 -- 
+2026-05-05 03:02:23,145	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:02:23,145	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 376.0MiB object store
+2026-05-05 03:02:23,145	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 1739784/11656553
+2026-05-05 03:02:23,145	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 224 (367.5MiB); Resources: 4.0 CPU, 303.1MiB object store
+2026-05-05 03:02:23,145	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 924573/1
+2026-05-05 03:02:23,145	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 5 (65.5MiB); Resources: 14.8 CPU, 2.1MiB object store
+2026-05-05 03:02:23,145	INFO logging_progress.py:231 --     - Shuffle: 31919/407347
+2026-05-05 03:02:23,145	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:02:23,145	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:02:23,145	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:23,145	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:02:33,212	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:02:33,212	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:02:33,212	INFO logging_progress.py:227 -- Active & requested resources: 17.75/24 CPU, 567.0MiB/4.2GiB object store
+2026-05-05 03:02:33,212	INFO logging_progress.py:181 -- 
+2026-05-05 03:02:33,212	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:02:33,212	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 332.9MiB object store
+2026-05-05 03:02:33,212	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 2616367/11686439
+2026-05-05 03:02:33,212	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 204 (324.1MiB); Resources: 4.0 CPU, 232.1MiB object store
+2026-05-05 03:02:33,212	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 2031330/1
+2026-05-05 03:02:33,212	INFO logging_progress.py:233 --   Tasks: 13; Actors: 0; Queued blocks: 0 (0.0B); Resources: 13.8 CPU, 2.0MiB object store
+2026-05-05 03:02:33,212	INFO logging_progress.py:231 --     - Shuffle: 73140/417054
+2026-05-05 03:02:33,212	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:02:33,212	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:02:33,212	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:33,212	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:02:43,243	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:02:43,244	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:02:43,244	INFO logging_progress.py:227 -- Active & requested resources: 17.75/24 CPU, 518.6MiB/4.2GiB object store
+2026-05-05 03:02:43,244	INFO logging_progress.py:181 -- 
+2026-05-05 03:02:43,244	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:02:43,244	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 285.7MiB object store
+2026-05-05 03:02:43,244	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 3584259/11714407
+2026-05-05 03:02:43,244	INFO logging_progress.py:233 --   Tasks: 8 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 178 (268.7MiB); Resources: 8.0 CPU, 231.5MiB object store
+2026-05-05 03:02:43,244	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 3174577/1
+2026-05-05 03:02:43,244	INFO logging_progress.py:233 --   Tasks: 9; Actors: 0; Queued blocks: 0 (0.0B); Resources: 9.8 CPU, 1.3MiB object store
+2026-05-05 03:02:43,244	INFO logging_progress.py:231 --     - Shuffle: 110912/407184
+2026-05-05 03:02:43,244	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:02:43,244	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:02:43,244	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:43,244	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:02:53,330	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:02:53,330	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:02:53,330	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 534.9MiB/4.2GiB object store
+2026-05-05 03:02:53,331	INFO logging_progress.py:181 -- 
+2026-05-05 03:02:53,331	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:02:53,331	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 213.3MiB object store
+2026-05-05 03:02:53,331	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 5099119/11664973
+2026-05-05 03:02:53,331	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 148 (204.6MiB); Resources: 4.0 CPU, 319.5MiB object store
+2026-05-05 03:02:53,331	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 4229948/1
+2026-05-05 03:02:53,331	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 6 (80.0MiB); Resources: 14.8 CPU, 2.1MiB object store
+2026-05-05 03:02:53,331	INFO logging_progress.py:231 --     - Shuffle: 148632/410653
+2026-05-05 03:02:53,331	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:02:53,331	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:02:53,331	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:02:53,331	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:03:03,372	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:03:03,372	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:03:03,372	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 859.7MiB/4.2GiB object store
+2026-05-05 03:03:03,372	INFO logging_progress.py:181 -- 
+2026-05-05 03:03:03,372	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:03:03,372	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 143.1MiB object store
+2026-05-05 03:03:03,372	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 6477335/11650509
+2026-05-05 03:03:03,372	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 115 (134.5MiB); Resources: 4.0 CPU, 714.6MiB object store
+2026-05-05 03:03:03,372	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 4315761/1
+2026-05-05 03:03:03,372	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 36 (472.9MiB); Resources: 14.8 CPU, 2.1MiB object store
+2026-05-05 03:03:03,372	INFO logging_progress.py:231 --     - Shuffle: 151736/410760
+2026-05-05 03:03:03,372	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:03:03,372	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:03:03,372	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:03:03,372	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:03:13,436	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:03:13,436	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:03:13,436	INFO logging_progress.py:227 -- Active & requested resources: 17.75/24 CPU, 794.9MiB/4.2GiB object store
+2026-05-05 03:03:13,436	INFO logging_progress.py:181 -- 
+2026-05-05 03:03:13,437	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:03:13,437	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 105.6MiB object store
+2026-05-05 03:03:13,437	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 7216428/11650619
+2026-05-05 03:03:13,437	INFO logging_progress.py:233 --   Tasks: 4; Actors: 0; Queued blocks: 98 (97.0MiB); Resources: 4.0 CPU, 700.5MiB object store
+2026-05-05 03:03:13,437	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 5104645/1
+2026-05-05 03:03:13,437	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 35 (464.9MiB); Resources: 14.8 CPU, 2.1MiB object store
+2026-05-05 03:03:13,437	INFO logging_progress.py:231 --     - Shuffle: 175912/402944
+2026-05-05 03:03:13,437	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:03:13,437	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:03:13,437	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:03:13,437	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:03:23,488	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:03:23,488	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:03:23,488	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 681.2MiB/4.2GiB object store
+2026-05-05 03:03:23,488	INFO logging_progress.py:181 -- 
+2026-05-05 03:03:23,488	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:03:23,488	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 79.3MiB object store
+2026-05-05 03:03:23,488	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 7729888/11638258
+2026-05-05 03:03:23,488	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 86 (70.4MiB); Resources: 4.0 CPU, 599.9MiB object store
+2026-05-05 03:03:23,488	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 5948431/1
+2026-05-05 03:03:23,488	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 27 (362.0MiB); Resources: 14.8 CPU, 2.1MiB object store
+2026-05-05 03:03:23,488	INFO logging_progress.py:231 --     - Shuffle: 205029/401079
+2026-05-05 03:03:23,489	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:03:23,489	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:03:23,489	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:03:23,489	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:03:33,491	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:03:33,492	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:03:33,492	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 543.7MiB/4.2GiB object store
+2026-05-05 03:03:33,492	INFO logging_progress.py:181 -- 
+2026-05-05 03:03:33,492	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:03:33,492	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 57.1MiB object store
+2026-05-05 03:03:33,492	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 8168174/11643993
+2026-05-05 03:03:33,492	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 76 (48.3MiB); Resources: 4.0 CPU, 484.4MiB object store
+2026-05-05 03:03:33,492	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 6763353/1
+2026-05-05 03:03:33,492	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 18 (242.2MiB); Resources: 14.8 CPU, 2.2MiB object store
+2026-05-05 03:03:33,492	INFO logging_progress.py:231 --     - Shuffle: 243844/418911
+2026-05-05 03:03:33,492	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:03:33,492	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:03:33,492	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:03:33,492	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:03:43,564	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:03:43,564	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:03:43,564	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 399.9MiB/4.2GiB object store
+2026-05-05 03:03:43,564	INFO logging_progress.py:181 -- 
+2026-05-05 03:03:43,564	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:03:43,564	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 34.6MiB object store
+2026-05-05 03:03:43,564	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 8613655/11600299
+2026-05-05 03:03:43,564	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 65 (27.4MiB); Resources: 4.0 CPU, 363.0MiB object store
+2026-05-05 03:03:43,564	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 7604842/1
+2026-05-05 03:03:43,564	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 10 (125.2MiB); Resources: 14.8 CPU, 2.3MiB object store
+2026-05-05 03:03:43,565	INFO logging_progress.py:231 --     - Shuffle: 286488/438736
+2026-05-05 03:03:43,565	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:03:43,565	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:03:43,565	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:03:43,565	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:03:53,653	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:03:53,653	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:03:53,653	INFO logging_progress.py:227 -- Active & requested resources: 18.75/24 CPU, 115.8MiB/4.2GiB object store
+2026-05-05 03:03:53,653	INFO logging_progress.py:181 -- 
+2026-05-05 03:03:53,654	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:03:53,654	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 10.9MiB object store
+2026-05-05 03:03:53,654	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9051482/10023955
+2026-05-05 03:03:53,654	INFO logging_progress.py:233 --   Tasks: 4 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 22 (9.3MiB); Resources: 4.0 CPU, 102.9MiB object store
+2026-05-05 03:03:53,654	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 8865738/1
+2026-05-05 03:03:53,654	INFO logging_progress.py:233 --   Tasks: 14 [backpressured:tasks(ResourceBudget)]; Actors: 0; Queued blocks: 0 (0.0B); Resources: 14.8 CPU, 2.0MiB object store
+2026-05-05 03:03:53,654	INFO logging_progress.py:231 --     - Shuffle: 332004/390250
+2026-05-05 03:03:53,654	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:03:53,654	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:03:53,654	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:03:53,654	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:04:03,704	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:04:03,704	INFO logging_progress.py:225 -- Total Progress: 0/?
+2026-05-05 03:04:03,704	INFO logging_progress.py:227 -- Active & requested resources: 0.75/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 03:04:03,704	INFO logging_progress.py:181 -- 
+2026-05-05 03:04:03,704	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:04:03,704	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:03,704	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:04:03,704	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:03,704	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9243808/1
+2026-05-05 03:04:03,704	INFO logging_progress.py:233 --   Tasks: 3; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 0.0B object store
+2026-05-05 03:04:03,704	INFO logging_progress.py:231 --     - Shuffle: 402427/370775
+2026-05-05 03:04:03,704	INFO logging_progress.py:231 --     - Aggregation: 0/1
+2026-05-05 03:04:03,704	INFO logging_progress.py:231 -- Write: 0/1
+2026-05-05 03:04:03,704	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:03,704	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:04:13,760	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:04:13,760	INFO logging_progress.py:225 -- Total Progress: 2/?
+2026-05-05 03:04:13,760	INFO logging_progress.py:227 -- Active & requested resources: 0.75/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 03:04:13,760	INFO logging_progress.py:181 -- 
+2026-05-05 03:04:13,760	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:04:13,760	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:13,760	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:04:13,760	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:13,761	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9243808/?
+2026-05-05 03:04:13,761	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 0.0B object store
+2026-05-05 03:04:13,761	INFO logging_progress.py:231 --     - Shuffle: 402427/370775
+2026-05-05 03:04:13,761	INFO logging_progress.py:231 --     - Aggregation: 133879/?
+2026-05-05 03:04:13,761	INFO logging_progress.py:231 -- Write: 2/?
+2026-05-05 03:04:13,761	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:13,761	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:04:23,866	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:04:23,867	INFO logging_progress.py:225 -- Total Progress: 2/?
+2026-05-05 03:04:23,867	INFO logging_progress.py:227 -- Active & requested resources: 0.75/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 03:04:23,867	INFO logging_progress.py:181 -- 
+2026-05-05 03:04:23,867	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:04:23,867	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:23,867	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:04:23,867	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:23,867	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9243808/?
+2026-05-05 03:04:23,867	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 0.0B object store
+2026-05-05 03:04:23,867	INFO logging_progress.py:231 --     - Shuffle: 402427/370775
+2026-05-05 03:04:23,867	INFO logging_progress.py:231 --     - Aggregation: 133879/?
+2026-05-05 03:04:23,867	INFO logging_progress.py:231 -- Write: 2/?
+2026-05-05 03:04:23,867	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:23,867	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:04:33,971	INFO logging_progress.py:174 -- ======= Running Dataset: dataset_19_0 =======
+2026-05-05 03:04:33,972	INFO logging_progress.py:225 -- Total Progress: 2/?
+2026-05-05 03:04:33,972	INFO logging_progress.py:227 -- Active & requested resources: 0.75/24 CPU, 0.0B/4.2GiB object store
+2026-05-05 03:04:33,972	INFO logging_progress.py:181 -- 
+2026-05-05 03:04:33,972	INFO logging_progress.py:231 -- ReadParquet->SplitBlocks(67): 9384487/9384487
+2026-05-05 03:04:33,972	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:33,972	INFO logging_progress.py:231 -- MapBatches(cleanse_batch)->MapBatches(join_zones)->MapBatches(speed_batch): 9243808/9243808
+2026-05-05 03:04:33,972	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:33,972	INFO logging_progress.py:231 -- HashAggregate(key_columns=('pickup_hour', 'pu_borough', 'pu_zone'), num_partitions=3): 9243808/?
+2026-05-05 03:04:33,972	INFO logging_progress.py:233 --   Tasks: 1; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.8 CPU, 0.0B object store
+2026-05-05 03:04:33,972	INFO logging_progress.py:231 --     - Shuffle: 402427/370775
+2026-05-05 03:04:33,972	INFO logging_progress.py:231 --     - Aggregation: 133879/?
+2026-05-05 03:04:33,972	INFO logging_progress.py:231 -- Write: 2/?
+2026-05-05 03:04:33,972	INFO logging_progress.py:233 --   Tasks: 0; Actors: 0; Queued blocks: 0 (0.0B); Resources: 0.0 CPU, 0.0B object store
+2026-05-05 03:04:33,972	INFO logging_progress.py:192 -- =============================================
+2026-05-05 03:04:35,087	INFO streaming_executor.py:294 -- ✔️  Dataset dataset_19_0 execution finished in 152.13 seconds
+2026-05-05 03:04:35,098	INFO dataset.py:5765 -- Data sink Parquet finished. 200848 rows and 13.8MiB data written.
+/home/muhammed786fiyas/Desktop/Projects/ml_ops/assignment_8/assignment-8-muhammed786fiyas/scripts/pipeline_ray.py:196: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  metrics["finished_at"] = datetime.utcnow().isoformat()
+[ray] cluster resources: {'CPU': 24.0, 'node:10.250.139.217': 1.0, 'node:__internal_head__': 1.0, 'TPU': 1.0, 'object_store_memory': 9039025766.0, 'memory': 21091060122.0, 'accelerator_type:G': 1.0, 'node:10.250.139.214': 1.0, 'GPU': 1.0}
+[ingest] 9,384,487 rows in 5.312s
+[clean]  9,248,121 rows in 117.271s
+[join]   9,248,121 rows in 105.742s
+[udf]    200,848 feature rows in 152.677s
+[export] wrote to /home/muhammed786fiyas/Desktop/Projects/ml_ops/assignment_8/assignment-8-muhammed786fiyas/output/ray_features.parquet in 152.155s
+
+[total] 533.16s
+
+metrics -> logs/ray_metrics.json

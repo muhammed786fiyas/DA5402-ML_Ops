@@ -1,0 +1,24 @@
+# Virtual environments (recreate via scripts/02_setup_env.sh)
+venv/
+venv_*/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Spark/Ray runtime artifacts
+spark-warehouse/
+metastore_db/
+*.tmp
+
+# Large raw data (download via scripts/01_get_data.sh)
+data/trips/*.parquet
+data/trips_extra/*.parquet

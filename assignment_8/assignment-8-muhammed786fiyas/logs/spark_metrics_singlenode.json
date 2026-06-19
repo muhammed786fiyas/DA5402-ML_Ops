@@ -1,0 +1,15 @@
+{
+  "framework": "spark",
+  "started_at": "2026-05-04T19:07:54.192654",
+  "ingest_sec": 4.09,
+  "raw_rows": 9384487,
+  "clean_sec": 4.469,
+  "clean_rows": 9248121,
+  "join_sec": 4.333,
+  "join_rows": 9248121,
+  "udf_and_agg_sec": 14.441,
+  "feature_rows": 200848,
+  "export_sec": 0.726,
+  "total_sec": 28.179,
+  "finished_at": "2026-05-04T19:08:24.800794"
+}

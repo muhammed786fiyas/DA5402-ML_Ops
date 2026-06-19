@@ -1,0 +1,15 @@
+{
+  "framework": "ray",
+  "started_at": "2026-05-04T19:10:05.734237",
+  "ingest_sec": 1.475,
+  "raw_rows": 9384487,
+  "clean_sec": 1.766,
+  "clean_rows": 9248121,
+  "join_sec": 2.062,
+  "join_rows": 9248121,
+  "udf_and_agg_sec": 60.644,
+  "feature_rows": 200848,
+  "export_sec": 60.897,
+  "total_sec": 126.847,
+  "finished_at": "2026-05-04T19:12:14.680684"
+}

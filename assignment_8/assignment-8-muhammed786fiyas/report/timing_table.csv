@@ -1,0 +1,7 @@
+Stage,Spark (s),Ray (s),Spark/Ray ratio
+Ingestion,25.514,5.312,4.8
+Cleansing,31.23,117.271,0.27
+Heavy Join,41.307,105.742,0.39
+UDF + Aggregate,86.895,152.677,0.57
+Export,3.961,152.155,0.03
+TOTAL,189.047,533.16,0.35

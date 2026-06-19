@@ -1,0 +1,3 @@
+log,peak_cpu_pct,peak_mem_gb,mean_cpu_pct
+ray_node_master,84.4,12.059,64.5
+spark_node_master,78.2,12.243,38.2

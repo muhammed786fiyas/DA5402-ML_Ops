@@ -1,0 +1,29 @@
+{
+  "spark_total_sec": 189.047,
+  "ray_total_sec": 533.16,
+  "winner": "Spark",
+  "parity": {
+    "spark_rows": 200848,
+    "ray_rows": 197392,
+    "matched_rows": 197392,
+    "parity_pct": 98.28,
+    "numeric_diffs": {
+      "trip_count": {
+        "max_abs_diff": 1256.0,
+        "mean_abs_diff": 30.606432884818027
+      },
+      "mean_speed": {
+        "max_abs_diff": 3.579883835367097,
+        "mean_abs_diff": 2.3530906281578355e-05
+      },
+      "mean_distance": {
+        "max_abs_diff": 1.770833333333334,
+        "mean_abs_diff": 1.194113232514579e-05
+      },
+      "mean_fare": {
+        "max_abs_diff": 8.325000000000003,
+        "mean_abs_diff": 5.1626580661373425e-05
+      }
+    }
+  }
+}
